@@ -1,5 +1,5 @@
 import React from 'react';
-import './product.css';
+import './Product.css';
 
 export default function Product({ onAddToCartClick, price, title }) {
   return (
