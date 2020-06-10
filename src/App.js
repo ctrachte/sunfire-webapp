@@ -6,7 +6,6 @@ import Cart from './Components/Cart/Cart';
 import CheckoutForm from './Components/CheckoutForm/CheckoutForm';
 import logo from './logo.svg';
 import './App.css';
-import keys from './keys';
 
 export default function App() {
   const [itemsInCart, setItemsInCart] = useState([]);
@@ -53,7 +52,7 @@ export default function App() {
         </div>
         <Cart itemsInCart={itemsInCart} totalCost={totalCost} />
         {itemsInCart.length > 0 && (
-          <StripeProvider apiKey={keys.stripeTest}>
+          <StripeProvider apiKey={'pk_test_7ggQU4Dl9g0WK9Xior6131Wq'}>
             <Elements>
               <CheckoutForm totalCost={totalCost} />
             </Elements>
