@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Elements, StripeProvider } from 'react-stripe-elements';
 import items from './api/items.js';
-import Product from './Components/Product/Product.js';
-import Cart from './Components/Cart/Cart.js';
-import CheckoutForm from './Components/CheckoutForm/CheckoutForm.js';
+import Product from './src/Components/Product/Product.js';
+import Cart from './src/Components/Cart/Cart.js';
+import CheckoutForm from './src/Components/CheckoutForm/CheckoutForm.js';
 import logo from './logo.svg';
 import './App.css';
 
