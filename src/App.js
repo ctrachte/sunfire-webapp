@@ -52,7 +52,7 @@ export default function App() {
         </div>
         <Cart itemsInCart={itemsInCart} totalCost={totalCost} />
         {itemsInCart.length > 0 && (
-          <StripeProvider apiKey={process.env.REACT_APP_STRIPE_TEST}>
+          <StripeProvider apiKey={'pk_test_7ggQU4Dl9g0WK9Xior6131Wq'}>
             <Elements>
               <CheckoutForm totalCost={totalCost} />
             </Elements>
