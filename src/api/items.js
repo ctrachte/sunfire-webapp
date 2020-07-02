@@ -1,20 +1,20 @@
 export default [
     {
       id: 1,
-      title: 'Shenmue',
-      price: 50,
-      category: 'Dreamcast',
+      title: 'Sunflare',
+      price: 15,
+      category: 'Medium',
     },
     {
       id: 2,
-      title: 'Sonic Adventure',
-      price: 25,
-      category: 'Dreamcast',
+      title: 'Sunfire',
+      price: 15,
+      category: 'Medium Hot',
     },
     {
       id: 3,
-      title: 'Soul Calibur',
-      price: 30,
-      category: 'Dreamcast',
+      title: 'Eclipse',
+      price: 20,
+      category: 'Hot',
     },
   ];

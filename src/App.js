@@ -36,11 +36,7 @@ export default function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className="App-header-text">Sunfire Hot Sauce Shop</h1>
-      </header>
-      <img src={logo} className="App-logo" alt="logo" />
-      <main className="App-shop">
-        <div className="App-products">
+      <div className="App-products">
           {items.map(item => (
             <Product
               key={item.title}
@@ -50,6 +46,10 @@ export default function App() {
             />
           ))}
         </div>
+      </header>
+      <img src={logo} className="App-logo" alt="logo" />
+      <main className="App-shop">
+
         <Cart itemsInCart={itemsInCart} totalCost={totalCost} />
         {itemsInCart.length > 0 && (
           <StripeProvider apiKey={'pk_test_7ggQU4Dl9g0WK9Xior6131Wq'}>

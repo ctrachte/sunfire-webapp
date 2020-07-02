@@ -1,5 +1,4 @@
 .Product {
-    border: 1px solid #eee;
     margin: 1rem 0;
     padding: 1rem;
   }
@@ -30,8 +29,8 @@
     font-weight: 600;
     line-height: 1;
     text-align: center;
-    background-color: #61dafb;
-    color: #fff;
+    background-color: #fff32b;
+    color: black;
     cursor: pointer;
     transition-property: background-color, color;
     transition-duration: 0.25s;
@@ -41,5 +40,6 @@
   
   .Product-buy-button:hover,
   .Product-buy-button:focus {
-    background-color: #47b8d7;
+    background-color: #eb0708;
+    color: white;
   }
