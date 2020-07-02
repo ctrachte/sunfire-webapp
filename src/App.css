@@ -1,6 +1,11 @@
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 32px;
+  animation: App-logo-spin infinite 50s linear;
+  display: block;
+  margin-left: 0;
+  margin-right: auto;
+  width: 50%;
+  position: absolute;
+  z-index:-1;
 }
 
 .App-header {
@@ -12,6 +17,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  z-index:1
 }
 
 .App-header-text {
@@ -20,12 +26,16 @@
 
 .App-shop {
   padding: 1rem 1rem 3rem;
+  width: 50%;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .App-products {
   margin: 3rem auto 3.5rem;
   max-width: 800px;
   text-align: center;
+  z-index:1
 }
 
 @media (min-width: 800px) {

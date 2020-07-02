@@ -4,7 +4,7 @@ import items from './api/items.js';
 import Product from './Components/Product/Product.js';
 import Cart from './Components/Cart/Cart.js';
 import CheckoutForm from './Components/CheckoutForm/CheckoutForm.js';
-import logo from './logo.svg';
+import logo from './sunfireBackground.jpg';
 import './App.css';
 
 export default function App() {
@@ -36,9 +36,9 @@ export default function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <h1 className="App-header-text">Sunfire Hot Sauce Shop</h1>
       </header>
+      <img src={logo} className="App-logo" alt="logo" />
       <main className="App-shop">
         <div className="App-products">
           {items.map(item => (
