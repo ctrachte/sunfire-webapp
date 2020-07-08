@@ -23,6 +23,27 @@ function CheckoutForm({ stripe, totalCost }) {
 
       if (response.ok) {
         setStatus('complete');
+        try {
+    
+          let response = await fetch('/.netlify/functions/invoice', {
+            method: 'POST',
+            body: JSON.stringify({
+              to: 'cetrachte@hotmail.com',
+              from: 'cetrachte@hotmail.com',
+              subject: 'Your Purchase from Sunfire Hot Sauce',
+              text: 'purchase from sunfire hot sauce ...',
+              html: '<strong>Enjoy!</strong>',
+            }),
+          });
+    
+          if (response.ok) {
+            setStatus('complete');
+          } else {
+            throw new Error('Network response for Sendgrid API was not ok.');
+          }
+        } catch (err) {
+          setStatus('error');
+        }
       } else {
         throw new Error('Network response was not ok.');
       }

@@ -8,6 +8,7 @@ import logo from './sunfireBackground.jpg';
 import './App.css';
 
 export default function App() {
+
   const [itemsInCart, setItemsInCart] = useState([]);
 
   const handleAddToCartClick = id => {
@@ -52,7 +53,7 @@ export default function App() {
 
         <Cart itemsInCart={itemsInCart} totalCost={totalCost} />
         {itemsInCart.length > 0 && (
-          <StripeProvider apiKey={'pk_test_7ggQU4Dl9g0WK9Xior6131Wq'}>
+          <StripeProvider apiKey={process.env.REACT_APP_STRIPE_PK}>
             <Elements>
               <CheckoutForm totalCost={totalCost} />
             </Elements>
