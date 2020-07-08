@@ -58,7 +58,7 @@ function CheckoutForm({ stripe, totalCost }) {
 
   return (
     <form className="CheckoutForm" onSubmit={submit}>
-      <h4>Would you like to complete the purchase?</h4>
+      <h4>Enter info and click submit to complete your order!</h4>
       <CardElement />
       <button
         className="CheckoutForm-button"
