@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Elements, StripeProvider } from 'react-stripe-elements';
-import items from './api/items.js';
+// import items from './api/items.js';
 import Product from './Components/Product/Product.js';
 import Cart from './Components/Cart/Cart.js';
 import CheckoutForm from './Components/CheckoutForm/CheckoutForm.js';
@@ -9,14 +9,18 @@ import './App.css';
 import db from './firebase.js';
 
 export default function App() {
-  // testing our db
-  db.collection("inventory")
-  .get()
-  .then(querySnapshot => {
-    const data = querySnapshot.docs.map(doc => doc.data());
-    console.log(data); // array of cities objects
-  });
+
   const [itemsInCart, setItemsInCart] = useState([]);
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    db.collection("inventory")
+    .get()
+    .then(querySnapshot => {
+      const data = querySnapshot.docs.map(doc => doc.data());
+      setItems(data);
+    })
+   });
 
   const handleAddToCartClick = id => {
     setItemsInCart(itemsInCart => {
@@ -45,11 +49,12 @@ export default function App() {
     <div className="App">
       <header className="App-header">
       <div className="App-products">
-          {items.map(item => (
+          {items?.map(item => (
             <Product
-              key={item.title}
+              key={item.id}
               title={item.title}
               price={item.price}
+              qty={item.qty}
               onAddToCartClick={() => handleAddToCartClick(item.id)}
             />
           ))}

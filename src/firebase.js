@@ -1,7 +1,9 @@
 import firebase from "firebase";
 
+const firestore_apiKey = process.env.REACT_APP_FIRESTORE_API_KEY;
+
 const firebaseApp = firebase.initializeApp({
-    apiKey: process.env.REACT_APP_FIRESTORE_API_KEY,
+    apiKey: firestore_apiKey,
     authDomain: "sunfire-web-app.firebaseapp.com",
     databaseURL: "https://sunfire-web-app.firebaseio.com",
     projectId: "sunfire-web-app",
