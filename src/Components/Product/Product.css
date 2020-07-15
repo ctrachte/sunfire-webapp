@@ -37,8 +37,7 @@
     -webkit-appearance: none;
   }
   
-  .Product-buy-button:hover,
-  .Product-buy-button:focus {
+  .Product-buy-button:hover {
     background-color: #eb0708;
     color: white;
   }

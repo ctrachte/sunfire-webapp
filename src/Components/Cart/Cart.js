@@ -2,7 +2,7 @@ import React from 'react';
 import CartItem from './CartItem';
 import './Cart.css';
 
-export default function Cart({ itemsInCart, totalCost }) {
+export default function Cart({ handleRemoveFromCartClick, itemsInCart, totalCost }) {
   return (
     <div className="Cart">
       <h2 className="Cart-title">Your shopping cart</h2>
@@ -14,6 +14,8 @@ export default function Cart({ itemsInCart, totalCost }) {
               title={item.title}
               cost={item.price * item.quantity}
               quantity={item.quantity}
+              handleRemoveFromCartClick={handleRemoveFromCartClick}
+              id={item.id}
             />
           ))}
           <div className="Cart-total-cost">

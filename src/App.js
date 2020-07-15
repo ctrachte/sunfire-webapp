@@ -40,6 +40,27 @@ export default function App() {
     });
   };
 
+  const handleRemoveFromCartClick = id => {
+    setItemsInCart(itemsInCart => {
+      const itemInCart = itemsInCart.find(item => item.id === id);
+
+      // if item is already in cart, update the quantity
+      if (itemInCart) {
+        return itemsInCart.map(item => {
+          if (item.id !== id) return item;
+          if (item.quantity > 0) {
+            return { ...itemInCart, quantity: item.quantity - 1 };
+          }
+          else {
+            return { ...itemInCart, quantity: item.quantity };
+          }
+        });
+      }
+      // otherwise, remove item from cart
+      return itemsInCart;
+    });
+  };
+  
   const totalCost = itemsInCart.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
@@ -63,7 +84,7 @@ export default function App() {
       <img src={logo} className="App-logo" alt="logo" />
       <main className="App-shop">
 
-        <Cart itemsInCart={itemsInCart} totalCost={totalCost} />
+        <Cart  handleRemoveFromCartClick={handleRemoveFromCartClick} itemsInCart={itemsInCart} totalCost={totalCost} />
         {itemsInCart.length > 0 && (
           <StripeProvider apiKey={process.env.REACT_APP_STRIPE_PK}>
             <Elements>

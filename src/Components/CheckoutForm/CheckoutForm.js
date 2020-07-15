@@ -63,7 +63,7 @@ function CheckoutForm({ stripe, totalCost }) {
       <button
         className="CheckoutForm-button"
         type="submit"
-        disabled={status === 'submitting'}
+        disabled={status === 'submitting' || totalCost === 0}
       >
         {status === 'submitting' ? 'Submitting' : 'Submit Order'}
       </button>
