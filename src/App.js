@@ -6,9 +6,16 @@ import Cart from './Components/Cart/Cart.js';
 import CheckoutForm from './Components/CheckoutForm/CheckoutForm.js';
 import logo from './sunfireBackground.jpg';
 import './App.css';
+import db from './firebase.js';
 
 export default function App() {
-
+  // testing our db
+  db.collection("inventory")
+  .get()
+  .then(querySnapshot => {
+    const data = querySnapshot.docs.map(doc => doc.data());
+    console.log(data); // array of cities objects
+  });
   const [itemsInCart, setItemsInCart] = useState([]);
 
   const handleAddToCartClick = id => {
