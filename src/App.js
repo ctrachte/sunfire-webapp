@@ -61,13 +61,13 @@ export default function App() {
     });
   };
 
-  const calculateShipping = qty => {
-    if (qty < 4) {
-      return qty * 8;
-    } else if (qty >= 4) {
-      return 32;
-    }
+  function calculateShipping (qty) {
+    return (qty < 4 ? qty * 8 : 32);
   }
+  const totalItems = itemsInCart.reduce(
+    (acc, item) => (acc + item.quantity),
+    0
+  );
 
   const subTotal = itemsInCart.reduce(
     (acc, item) => (acc + item.price * item.quantity),
@@ -75,7 +75,7 @@ export default function App() {
   );
 
   const totalCost = itemsInCart.reduce(
-    (acc, item) => (acc + item.price * item.quantity) + calculateShipping(itemsInCart.length),
+    (acc, item) => (acc + item.price * item.quantity) + calculateShipping(totalItems),
     0
   );
 
