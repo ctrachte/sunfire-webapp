@@ -60,9 +60,17 @@ export default function App() {
       return itemsInCart;
     });
   };
+
+  const calculateShipping = qty => {
+    if (qty < 4) {
+      return qty * 8;
+    } else if (qty >= 4) {
+      return 32;
+    }
+  }
   
   const totalCost = itemsInCart.reduce(
-    (acc, item) => acc + item.price * item.quantity,
+    (acc, item) => (acc + item.price * item.quantity) + calculateShipping(item.quantity),
     0
   );
 
