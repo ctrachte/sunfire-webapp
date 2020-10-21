@@ -2,7 +2,7 @@ import React from 'react';
 import CartItem from './CartItem';
 import './Cart.css';
 
-export default function Cart({ handleRemoveFromCartClick, itemsInCart, totalCost }) {
+export default function Cart({ calculateShipping, handleRemoveFromCartClick, itemsInCart, totalCost }) {
   return (
     <div className="Cart">
       <h2 className="Cart-title">Your shopping cart</h2>
@@ -18,6 +18,13 @@ export default function Cart({ handleRemoveFromCartClick, itemsInCart, totalCost
               id={item.id}
             />
           ))}
+            <CartItem
+              key={0}
+              title={"Shipping"}
+              cost={calculateShipping(itemsInCart.length)}
+              quantity={1}
+              id={0}
+            />
           <div className="Cart-total-cost">
             Total cost: ${totalCost.toFixed(2)}
           </div>

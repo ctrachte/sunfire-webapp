@@ -1,7 +1,7 @@
 import React from 'react';
 import './CartItem.css';
 
-export default function CartItem({ handleRemoveFromCartClick, title, cost, quantity, id }) {
+export default function CartItem({handleRemoveFromCartClick, title, cost, quantity, id }) {
   return (
     <div className="CartItem">
       <div>{title}</div>
@@ -9,9 +9,11 @@ export default function CartItem({ handleRemoveFromCartClick, title, cost, quant
         <div className="CartItem-quantity">Qty: {quantity}</div>
         <div>${cost.toFixed(2)}</div>
       </div>
+      {handleRemoveFromCartClick ? 
       <button className="Product-remove-button" onClick={()=>handleRemoveFromCartClick(id)}>
         X
       </button>
+      : <div></div>}
     </div>
   );
 }

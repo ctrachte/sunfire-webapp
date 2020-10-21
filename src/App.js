@@ -92,7 +92,7 @@ export default function App() {
       <img src={logo} className="App-logo" alt="logo" />
       <main className="App-shop">
 
-        <Cart  handleRemoveFromCartClick={handleRemoveFromCartClick} itemsInCart={itemsInCart} totalCost={totalCost} />
+        <Cart calculateShipping={calculateShipping} handleRemoveFromCartClick={handleRemoveFromCartClick} itemsInCart={itemsInCart} totalCost={totalCost} />
         {itemsInCart.length > 0 && (
           <StripeProvider apiKey={process.env.REACT_APP_STRIPE_PK}>
             <Elements>
