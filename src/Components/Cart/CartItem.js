@@ -10,9 +10,7 @@ export default function CartItem({handleRemoveFromCartClick, title, cost, quanti
         <div>${cost.toFixed(2)}</div>
       </div>
       {handleRemoveFromCartClick ? 
-      <button className="Product-remove-button" onClick={()=>handleRemoveFromCartClick(id)}>
-        X
-      </button>
+          <button className="close big-button Product-Remove-Button" onClick={()=>handleRemoveFromCartClick(id)}>Remove 1</button>
       : <div></div>}
     </div>
   );

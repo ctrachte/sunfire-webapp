@@ -18,3 +18,11 @@
   .CartItem-quantity {
     padding: 0 1rem;
   }
+  :root {
+    --backgroundColor: rgb(255, 255, 255);
+    --colorShadeA: rgb(255 91 40);
+    --colorShadeB: rgb(255 127 36);
+    --colorShadeC: rgb(254 169 42);
+    --colorShadeD: rgb(255 227 42);
+    --colorShadeE: rgb(255 255 255);
+  }
