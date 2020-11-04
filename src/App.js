@@ -61,23 +61,11 @@ export default function App() {
     });
   };
 
-  function calculateShipping (qty) {
-    return (qty < 4 ? qty * 8 : 32);
-  }
-  const totalItems = itemsInCart.reduce(
-    (acc, item) => (acc + item.quantity),
-    0
-  );
-
   const subTotal = itemsInCart.reduce(
     (acc, item) => (acc + item.price * item.quantity),
     0
   );
 
-  const totalCost = itemsInCart.reduce(
-    (acc, item) => (acc + item.price * item.quantity) + calculateShipping(totalItems),
-    0
-  );
 
   return (
     <div className="App">
@@ -97,11 +85,11 @@ export default function App() {
       <img src={logo} className="App-logo" alt="logo" />
       <main className="App-shop">
 
-        <Cart subTotal={subTotal} handleRemoveFromCartClick={handleRemoveFromCartClick} itemsInCart={itemsInCart} totalCost={totalCost} />
+        <Cart subTotal={subTotal} handleRemoveFromCartClick={handleRemoveFromCartClick} itemsInCart={itemsInCart} />
         {itemsInCart.length > 0 && (
           <StripeProvider apiKey={process.env.REACT_APP_STRIPE_PK}>
             <Elements>
-              <CheckoutForm totalCost={totalCost} />
+              <CheckoutForm totalCost={subTotal} />
             </Elements>
           </StripeProvider>
         )}
