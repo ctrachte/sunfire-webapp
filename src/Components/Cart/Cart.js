@@ -32,7 +32,7 @@ export default function Cart({ subTotal, handleRemoveFromCartClick, itemsInCart 
               id={0}
             />
           <div className="Cart-total-cost">
-            Total cost: ${calculateShipping(subTotal).toFixed(2)}
+            Total cost: ${(calculateShipping(subTotal) + subTotal).toFixed(2)}
           </div>
         </div>
       ) : (
